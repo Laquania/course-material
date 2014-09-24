@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-Created on Wed Sep 24 12:39:27 2014
+Éditeur de Spyder
 
-@author: Amaury
+Ceci est un script temporaire.
 """
+
 
 def is_prime2(num):
     import numpy as N
@@ -18,10 +19,13 @@ def is_prime2(num):
             return num
         else:
             return 'r'
+
 b = []
-for i in range(10000, 10050):
+for i in range(100000000, 100000200):
     if is_prime2(i) != 'r':
         b = b + [is_prime2(i)]
 
-print(b[0], ', ', b[1], ', ', b[2], ', ', b[3])
+print(b[0])
+
+
 

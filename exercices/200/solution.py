@@ -64,12 +64,16 @@ Created on Tue Sep 23 11:41:31 2014
 #import sys
 #is_prime(int(sys.argv[1]))
 
-def is_prime(num): 
+def is_prime2(num):
+    import numpy as N
+    a = 0;
     if num == 1 | num == 0:
         return False
     else:
         for i in range(2, int(N.sqrt(num))+1):
             if num % i == 0:
-                return False
-        return True
-        #print(num)
+                a = a+1;
+        if a == 0:
+            return True
+        else:
+            return False

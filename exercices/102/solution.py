@@ -49,18 +49,18 @@ def check_my_city(cityloc):
          'city': 'PANTIN',
          'name': 'DE GAULLE (PANTIN)',
          'longitude': 2.412715733388685}];
-    nb=1;
-    a=0;
+    nb = 1;
+    a = 0;
     for station in python_velib:
         if station['city'] == cityloc:
-            a=nb;
-            nb=nb+1;
-            if nb>a:
-                print(station['number'],"station for",station['city'],station['zip'])
+            a = nb;
+            nb = nb+1;
+            if nb > a:
+                print(station['number'], "station for", station['city'], station['zip'])
             else :
                 pass
-    if a==0:
+    if a == 0:
         print("Sorry! No station for your city has been found!")
     
     
-check_my_city(sys.argv[1]) 
+check_my_city(sys.argv[1])

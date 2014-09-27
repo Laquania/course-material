@@ -6,27 +6,32 @@ Created on Thu Sep 25 09:52:26 2014
 """
 
 def caesar_cypher(S, key, method):
-    import string
     a = list(S)
     b = 0
-    c = string.ascii_lowercase
-    for i in range(len(a)):
-        b = i+key
-        if b <= 25:
-            a[i] = c[b]
-        elif b <= 51 and b > 25:
-            a[i] = c[b-25]
-        elif b <= 77 and b > 51:
-            a[i] = c[b-51]
-        elif b <= 103 and b > 77:
-            a[i] = c[b-77]
-        elif b <= 129 and b > 103:
-            a[i] = c[b-103]
-    print(a)
+    d = list(method)
+    for i in range(len(a)-1):
+        e = 0
+        f = 0
+        for k in range(len(a)):
+            if k+97 == ord(a[i]):
+                print(k)
+                for j in range(len(d)):
+                    e = e+ord(d[j])
+                    if e == 757:     #forward
+                        b = i+key
+                    elif e == 831:   #backward
+                        b = i-key
+                    if b > 122 and b <= 147:
+                        f = b-25
+                    elif b > 147 and b <= 172:
+                        f = b-50
+                    elif b > 172 and b <= 197:
+                        f = b-75
+                    else:
+                        f = b
+                    print(f)
+                    a[i] = chr(f)
+        print(a)   #.decode('utf-8')
 
-
-import turtle
-caesar_cypher('laquania', 5, turtle.forward)
-caesar_cypher('qfvzfsnf', 5, turtle.backward)
-
-# qfvzfsnf
+caesar_cypher('laquania', 5, 'forward')
+caesar_cypher('qfvzfsnf', 5, 'backward')
